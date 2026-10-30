@@ -3,15 +3,20 @@
 # Why this file exists: requirements.txt also carries torch, transformers and
 # fair-esm for the offline pipelines. Those are ~2 GB and the app never
 # imports them, so pointing Streamlit Community Cloud here keeps the build
-# fast and reliable.
+# fast and reliable. Select it in the app's Settings -> "Requirements file".
 #
-# Community Cloud: App settings -> Advanced -> "Requirements file"
-#                  -> requirements-app.txt
+# Validated on Python 3.13 (choose 3.13 in the same Settings page):
+# streamlit 1.66.1 · pandas 3.0.6 · numpy 2.5.3 · scikit-learn 1.9.1 ·
+# plotly 7.1.0 · biopython 1.88 · modlamp 4.3.2 · pymoo 0.6.2
+#
+# modlamp and pymoo are optional at runtime — app.py imports both behind
+# capability flags, so deleting those two lines still yields a working app
+# (Boman index falls back to the Eisenberg sum, NSGA-II seeding switches off).
 streamlit>=1.66,<2
-numpy>=1.24.0
-pandas>=2.0.0
-scikit-learn>=1.3
-plotly>=5.18
-biopython>=1.80
-modlamp>=4.3.0
-pymoo>=0.6.0
+numpy>=1.24,<3
+pandas>=2.0,<4
+scikit-learn>=1.3,<2
+plotly>=5.18,<8
+biopython>=1.80,<2
+modlamp>=4.3.0,<5
+pymoo>=0.6.0,<1
