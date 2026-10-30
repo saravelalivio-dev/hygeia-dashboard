@@ -1,0 +1,6 @@
+layer,descriptor,rule,lo,hi,rationale
+1,length,10<=L<=30,10.0,30.0,proposal 2.2.2 synthetic-viability window
+1,net_charge,ge,4.368,,cationic attraction; active 10th pct=4.37
+1,hydrophobic_moment,ge,0.18773080252511412,,amphipathic insertion; active 10th pct=0.188
+2,pf_2,le,,0.13245008978372683,lower favours Active (SHAP gap +0.074)
+2,pf_26,le,,0.3375948828390342,lower favours Active (SHAP gap +0.062)

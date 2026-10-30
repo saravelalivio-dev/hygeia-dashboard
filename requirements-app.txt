@@ -1,0 +1,17 @@
+# Slim dependency set for the HYGEIA dashboard (app.py) only.
+#
+# Why this file exists: requirements.txt also carries torch, transformers and
+# fair-esm for the offline pipelines. Those are ~2 GB and the app never
+# imports them, so pointing Streamlit Community Cloud here keeps the build
+# fast and reliable.
+#
+# Community Cloud: App settings -> Advanced -> "Requirements file"
+#                  -> requirements-app.txt
+streamlit>=1.66,<2
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3
+plotly>=5.18
+biopython>=1.80
+modlamp>=4.3.0
+pymoo>=0.6.0

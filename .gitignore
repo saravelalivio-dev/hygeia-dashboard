@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Streamlit (never commit API keys / secrets)
+.streamlit/secrets.toml
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
